@@ -14,9 +14,9 @@ const LoadingFallback: React.FC = () => {
   }, []);
 
   return (
-    <div className="z-50 flex flex-col w-full h-screen justify-center items-center text-white dark:text-white bg-gradient-to-b from-green-300 to-blue-400 dark:bg-gradient-to-b dark:from-gray-900 dark:to-black relative overflow-hidden">
+    <div className="z-50 flex flex-col w-full h-screen justify-center items-center text-white bg-gradient-to-b from-gray-900 to-black dark:bg-gradient-to-b dark:from-gray-900 dark:to-black relative overflow-hidden">
       {/* Fundo com partículas animadas */}
-      <div className="absolute inset-0 opacity-20 bg-gradient-to-r from-blue-400 to-green-400 rounded-2xl"></div>
+      <div className="absolute inset-0 opacity-20 bg-gradient-to-r from-gray-900 to-black rounded-2xl"></div>
       
       <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent rounded-lg shadow-lg"></div>
 
@@ -25,7 +25,7 @@ const LoadingFallback: React.FC = () => {
         {Array.from({ length: 20 }).map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-2 h-2 bg-green-400 rounded-full"
+            className="absolute w-2 h-2 bg-white rounded-full"
             animate={{
               x: [Math.random() * windowWidth, Math.random() * windowWidth],
               y: [Math.random() * windowHeight, Math.random() * windowHeight],
@@ -40,9 +40,9 @@ const LoadingFallback: React.FC = () => {
       </div>
 
       {/* Título com efeito retrô */}
-      <div className="relative z-10 flex flex-col items-center text-center text-white">
+      <div className="relative z-10 flex flex-col items-center text-center">
         <motion.h1
-          className="text-4xl md:text-6xl font-bold font-mono tracking-widest text-green-400"
+          className="text-4xl md:text-6xl font-bold font-mono tracking-widest text-white"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: "easeInOut" }}
@@ -52,7 +52,7 @@ const LoadingFallback: React.FC = () => {
 
         {/* Barra de progresso */}
         <motion.div
-          className="relative mt-8 w-64 h-6 bg-gray-800 border-4 border-green-400 rounded-md"
+          className="relative mt-8 w-64 h-6 bg-gray-800 border-4 border-white rounded-md"
           initial={{ width: "0%" }}
           animate={{ width: "100%" }}
           transition={{ duration: 5, ease: "easeInOut" }}
@@ -77,7 +77,7 @@ const LoadingFallback: React.FC = () => {
           animate={{ opacity: [0, 1, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
-          
+          {/* Coloque o texto de dica, se necessário */}
         </motion.p>
       </div>
     </div>

@@ -6,7 +6,8 @@ import { Moon } from 'lucide-react';
 import * as motion from "framer-motion/client"
 
 const NavBar = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  // Altera o estado inicial para 'true', indicando que o tema escuro deve estar ativo por padrão
+  const [darkMode, setDarkMode] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
 
   const toggleDarkMode = () => {
@@ -27,12 +28,15 @@ const NavBar = () => {
   };
 
   useEffect(() => {
+    // Adiciona a classe 'dark' ao carregar o componente, se necessário
+    document.documentElement.classList.add('dark');
+
     window.addEventListener('scroll', handleScroll);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, []); // Isso garante que o dark mode seja aplicado ao carregar a página
 
   return (
     <div className={`z-50 flex flex-row w-[98%] sm:w-[40%] p-5 gap-3 justify-around rounded-lg fixed top-6 transition-all duration-300 ${isScrolled ? 'bg-white/30 backdrop-blur-md dark:bg-gray-900/30 dark:backdrop-blur-md shadow-md' : 'bg-transparent'}`}>
