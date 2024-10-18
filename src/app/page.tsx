@@ -52,7 +52,7 @@ const Page: React.FC = () => {
           <div className='text-center w-[90%] sm:w-[70%] z-10 mt-24 sm:mt-36 flex flex-col gap-5'>
             <WelcomeAnimation/>
             
-            <div className='lg:w-[50%]'><Start /></div>
+            <div className='lg:w-[100%]'><Start /></div>
             <div className='mt-10'> <Timeline/></div>
            
           </div>

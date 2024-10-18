@@ -42,3 +42,19 @@ body {
 }
 
 
+@keyframes circleLoad {
+  0% {
+    stroke-dasharray: 0, 600;
+  }
+  100% {
+    stroke-dasharray: 600, 600;
+  }
+}
+
+.animate-circleLoad {
+  stroke-dasharray: 0, 600;
+  stroke-dashoffset: 0;
+  animation: circleLoad 3s ease-in-out infinite;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}

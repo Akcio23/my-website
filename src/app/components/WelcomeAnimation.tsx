@@ -2,7 +2,7 @@ import React from 'react';
 import * as motion from "framer-motion/client"
 
 const WelcomeAnimation = () => {
-  const welcomeText = "Bem-vindo";
+  const welcomeText = "Hello world";
 
   // Definindo a animação
   const textVariants = {
@@ -26,7 +26,7 @@ const WelcomeAnimation = () => {
 
   return (
     <motion.div
-      className='text-3xl sm:text-7xl text-start'
+      className='text-3xl sm:text-7xl text-center'
       initial="hidden"
       animate="visible"
       variants={textVariants}
